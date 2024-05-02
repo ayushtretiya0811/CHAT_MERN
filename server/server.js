@@ -15,7 +15,9 @@ app.use(express.json())
 connectDB();
 
 app.use(cors());
-
+app.use(cors({
+  origin: 'https://chat-fd2x4vm36-ayushtretiya0811s-projects.vercel.app' // Replace with your React app's origin
+ }));
 const port = process.env.PORT || 3000
 
 app.use('/api/auth', authRouer)
