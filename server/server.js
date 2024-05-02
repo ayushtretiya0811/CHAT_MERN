@@ -13,12 +13,8 @@ dotenv.config()
 app.use(morgan('dev'))
 app.use(express.json())
 connectDB();
-const corsOptions = {
-  origin: 'https://chat-swart-chi-34.vercel.app', // Replace with your frontend app's origin
-  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
- };
- 
- app.use(cors(corsOptions));
+
+ app.use(cors());
  
 const port = process.env.PORT || 3000
 
